@@ -15,10 +15,10 @@ struct SuperheroClass: Codable {
     let id: String
     let name: String
     let biography: Biography
- //   let powerstats: Powerstats
- //   let appearance: Appearance
- //   let work: Work
- //   let connections: Connections
+    let powerstats: Powerstats
+    let appearance: Appearance
+    let work: Work
+    let connections: Connections
     let image: Image
 }
 
@@ -38,12 +38,12 @@ struct Biography: Codable {
 }
 
 struct Powerstats: Codable {
-    let intelligence: Int
-    let strength: Int
-    let speed: Int
-    let durability: Int
-    let power: Int
-    let combat: Int
+    let intelligence: String
+    let strength: String
+    let speed: String
+    let durability: String
+    let power: String
+    let combat: String
 }
 
 struct Appearance: Codable {

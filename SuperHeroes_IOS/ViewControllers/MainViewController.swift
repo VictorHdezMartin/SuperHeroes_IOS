@@ -11,10 +11,10 @@ class MainViewController: UIViewController, UITableViewDataSource, UISearchBarDe
         
     @IBOutlet weak var tableView: UITableView!
         
-    var list: [SuperheroClass] = []
+        var list: [SuperheroClass] = []
         
-        override func viewDidLoad() {
-            super.viewDidLoad()
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
             tableView.dataSource = self
             
