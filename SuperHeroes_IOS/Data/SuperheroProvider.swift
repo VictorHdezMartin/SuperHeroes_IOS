@@ -28,3 +28,4 @@ class SuperheroProvider {
     }
 }
 
+// https://superheroapi.com/api/0f274f699287b7e0f20005a52387616a/3

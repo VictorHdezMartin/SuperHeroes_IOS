@@ -43,12 +43,9 @@ class DetailViewController: UIViewController {
 // ConnectionsView
     @IBOutlet weak var AfiliacionText: UITextView!
     @IBOutlet weak var RelativosText: UITextView!
-    
-// WorkView
-
+// WorkVie
     @IBOutlet weak var OcupacionText: UITextView!
     @IBOutlet weak var CentroTrabajoText: UITextView!
-    
 // AppearanceView
     @IBOutlet weak var GeneroText: UITextView!
     @IBOutlet weak var RazaText: UITextView!
@@ -59,6 +56,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var ColorOjosText: UITextView!
     @IBOutlet weak var ColorPeloText: UITextView!
     
+    
     var superhero: SuperheroClass!
 
     override func viewDidLoad() {
@@ -66,21 +64,21 @@ class DetailViewController: UIViewController {
         
         TabSelected(index: 0)
 
-        navigationItem.title = superhero.name
+      //  navigationItem.title = superhero.name
         lblDetailName.text = superhero.name
         DetailImageView.loadFrom(url: superhero.image.url)
         
         LoadSuperHeroe()
     }
     
-//  Manejo de la botonera: Ayer - hoy - mañana ----------------------------------------------------------------------
+//  Manejo de la botonera ------------------------------------------------------------
 
     @IBAction func OpcionesTab(_ sender: UISegmentedControl) {
         let selectedIndex = sender.selectedSegmentIndex
         TabSelected(index: selectedIndex)
     }
     
- // selección del Tab
+ // selección del Tab  ---------------------------------------------------------------
     
     func TabSelected(index:Int){
         BiografiaView.isHidden = index != 0
@@ -90,7 +88,7 @@ class DetailViewController: UIViewController {
         WorkView.isHidden = index != 3
     }
     
-// Carga de datos del SuperHeroe  -----------------------------------------------------------------------------------
+// Carga de datos del SuperHeroe ------------------------------------------------------
     
     func LoadSuperHeroe(){
         
@@ -102,24 +100,27 @@ class DetailViewController: UIViewController {
         FirstAppeText.text = superhero.biography.firstAppearance
         
      // Estadisticas
-        lblInteligencia.text = superhero.powerstats.intelligence
-        lblFuerza.text = superhero.powerstats.strength
-        lblResistencia.text = superhero.powerstats.durability
-        lblVelocidad.text = superhero.powerstats.speed
-        lblCombate.text = superhero.powerstats.combat
-        lblPoderes.text = superhero.powerstats.power
+        lblInteligencia.text = superhero.powerstats.intelligence + "%"
+        lblFuerza.text = superhero.powerstats.strength + "%"
+        lblResistencia.text = superhero.powerstats.durability + "%"
+        lblVelocidad.text = superhero.powerstats.speed + "%"
+        lblCombate.text = superhero.powerstats.combat + "%"
+        lblPoderes.text = superhero.powerstats.power + "%"
          
         InteligenciaStat.progress = Float(Double(superhero.powerstats.intelligence)! / 100)
         FuerzaStat.progress = Float(Double(superhero.powerstats.strength)! / 100)
         ResistenciaStat.progress = Float(Double(superhero.powerstats.durability)! / 100)
         VelocidadStat.progress = Float(Double(superhero.powerstats.speed)! / 100)
         CombateStat.progress = Float(Double(superhero.powerstats.combat)! / 100)
+        PoderesStat.progress = Float(Double(superhero.powerstats.power)! / 100)
         
      // Apariencia
         GeneroText.text = superhero.appearance.gender
         RazaText.text = superhero.appearance.race
-  //      AlturaText.text = superhero.appearance.height
-  //      PesoText.text = superhero.appearance.weight
+        Altura1Text.text = superhero.appearance.height[0] + "\""
+        Altura2Text.text = superhero.appearance.height[1]
+        Peso1Text.text = superhero.appearance.weight[0]
+        Peso2Text.text = superhero.appearance.weight[1]
         ColorOjosText.text = superhero.appearance.eyeColor
         ColorPeloText.text = superhero.appearance.hairColor
         
