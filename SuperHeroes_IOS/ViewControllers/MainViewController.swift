@@ -52,7 +52,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UISearchBarDe
 // movernos a otro ViewController pasando parámetros --------------------------------------------------
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier != "DetailSegue") {
+        if (segue.identifier == "goToDetail") {
             let detailViewController = segue.destination as! DetailViewController
             let indexPath = tableView.indexPathForSelectedRow!
             let superhero = list[indexPath.row]

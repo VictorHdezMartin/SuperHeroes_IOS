@@ -46,7 +46,7 @@
                                         <connections>
                                             <outlet property="MainImageView" destination="vas-gE-0PM" id="nJ1-LT-hmx"/>
                                             <outlet property="lblMainName" destination="ghO-j6-ewB" id="LA4-kv-K0c"/>
-                                            <segue destination="kDx-R3-ciA" kind="show" id="UwC-Qa-5IP"/>
+                                            <segue destination="kDx-R3-ciA" kind="show" identifier="goToDetail" id="UwC-Qa-5IP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
